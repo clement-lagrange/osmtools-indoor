@@ -12,6 +12,13 @@ api.building;                   //building
  * API QUERYS
  * -----------------------------------------------------------------------------
  */
+ api.findBuild = function(url){
+	var elt = url.split(",");
+	var NumRoom = elt[0] ;
+	var BuildName = elt[1];
+	var adr = elt[2];
+	return 'relation["building"="yes"]["name"="'+BuildName+'"];>>;way._["buildingpart"="room"]["ref"~"'+NumRoom+'"];>;out body qt;'	 
+}; 
 
 api.tagShell = function() {
   var b = map.getBounds();
